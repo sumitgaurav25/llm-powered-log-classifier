@@ -1,65 +1,42 @@
-# Intelligent Log Classification System
+# Multi-Tiered Log Intelligence: A Hybrid Classification Framework
 
 ## 📌 Problem Statement
+Modern system infrastructures generate vast amounts of log data that are often unstructured and noisy. Standard rule-based systems are too rigid to handle new log formats, while pure Machine Learning models require extensive labeled datasets. This project addresses the challenge of accurately categorizing logs in dynamic environments where data labels might be scarce or patterns highly variable.
 
-Modern applications generate thousands of log entries every minute. These logs contain critical information for debugging, monitoring, anomaly detection, and security analysis. However, manually reviewing and categorizing logs is:
+## 🌍 Real-World Problem Solving
+This framework is built for SRE (Site Reliability Engineering) and DevOps teams to:
+* **Reduce Alert Fatigue:** By filtering out noise using high-speed regex.
+* **Automate Root Cause Analysis:** By semantically grouping similar error messages.
+* **Handle Unknowns:** Using LLMs to interpret rare, "Black Swan" log events that have never been seen before.
 
-- Time-consuming  
-- Not scalable  
-- Prone to human error  
+## 🛠 The Hybrid Approach
+The system utilizes a three-tier pipeline to maximize efficiency:
+1. **Regex Layer:** Instant classification for predictable, recurring patterns.
+2. **Semantic Layer:** Uses **Sentence Transformers** and **Logistic Regression** to understand the "meaning" behind complex logs with existing training data.
+3. **Reasoning Layer:** Employs **Large Language Models (LLMs)** as a fallback for zero-shot classification when no labels exist.
 
-The objective of this project is to design and implement an automated log classification system that can intelligently categorize log messages, even when log formats vary or labeled data is limited.
+## 🧠 Challenges Faced
+* **Threshold Calibration:** Designing the logic to seamlessly transition between ML and LLM layers without losing context.
+* **Performance Optimization:** Integrating heavy transformer models into a responsive FastAPI environment.
+* **Pipeline Reliability:** Managing dependencies between different classification engines to ensure a single failed layer doesn't crash the system.
 
----
-
-## 🚀 Project Overview
-
-This project implements a hybrid log classification pipeline that adapts based on the structure and complexity of incoming logs.
-
-Instead of relying on a single technique, the system combines:
-
-- Rule-based classification for structured logs  
-- Embedding-based supervised learning for moderately complex logs  
-- LLM-based reasoning for ambiguous or low-data scenarios  
-
-This layered architecture ensures both speed and robustness.
-
----
-
-## 🧠 Classification Strategies
-
-### 1️⃣ Rule-Based Pattern Matching
-Used for highly structured and predictable log formats.  
-Provides fast and deterministic classification.
-
-### 2️⃣ Transformer Embeddings + Logistic Regression
-Used when sufficient labeled data is available.
-
-- Log messages are converted into semantic embeddings.
-- A Logistic Regression classifier predicts the final label.
-
-This approach balances accuracy and efficiency.
-
-### 3️⃣ LLM-Based Classification
-Used when:
-- Training data is insufficient  
-- Patterns are highly variable  
-- Labels are ambiguous  
-
-The LLM acts as a reasoning engine to classify complex logs.
+## 📊 Accuracy
+The hybrid model provides a robust accuracy profile:
+* **High Confidence:** Captured by the deterministic Regex and ML layers.
+* **Contextual Depth:** Provided by the LLM layer, ensuring even obscure logs are categorized with high semantic relevance.
 
 ---
 
-## 🏗 System Architecture
+## 📂 Folder Structure
+* `training/`: Logic for model development and regex patterns.
+* `models/`: Saved model artifacts.
+* `resources/`: Test data and documentation assets.
+* `server.py`: The FastAPI application.
 
-1. Logs are received via API.
-2. The system determines the most appropriate classification strategy.
-3. Prediction is generated.
-4. Output is returned with assigned labels.
-
-The system is deployed using a FastAPI server for easy integration.
+## 🚀 Setup & Usage
+1. **Install:** `pip install -r requirements.txt`
+2. **Run:** `uvicorn server:app --reload`
+3. **Process:** Upload a CSV with `source` and `log_message` to receive a classified `target_label` output.
 
 ---
-
-## 📂 Project Structure
-
+*Disclaimer: This project is for educational purposes.*
