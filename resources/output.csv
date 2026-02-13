@@ -1,0 +1,26 @@
+source,log_message,target_label
+AuthService,Scheduled report generated and emailed to admin.,Security Alert
+ModernCRM,Firewall rule updated to block suspicious traffic from 35.164.21.153.,Security Alert
+InventorySystem,User 14855 logged in successfully from IP 51.239.124.100.,Security Alert
+ModernCRM,Transaction ID TXN26601 processed successfully.,Unclassified
+InventorySystem,Stock updated for product ID 61054.,Unclassified
+AuthService,Transaction ID TXN19848 failed due to insufficient funds.,Unclassified
+AnalyticsEngine,Email notification sent to customer ID 37342.,Unclassified
+UserPortal,Stock updated for product ID 13751.,Unclassified
+UserPortal,Stock updated for product ID 57525.,Unclassified
+NotificationService,Invoice INV-2026-32688 generated for user 78204.,Security Alert
+InventorySystem,Invoice INV-2026-44858 generated for user 8696.,Security Alert
+ModernCRM,Scheduled report generated and emailed to admin.,Security Alert
+BillingSystem,Firewall rule updated to block suspicious traffic from 15.94.185.230.,Security Alert
+SecurityModule,Password reset request initiated for user 55174.,Security Alert
+AnalyticsEngine,User 87593 logged in successfully from IP 170.247.104.18.,Security Alert
+ModernHR,Stock updated for product ID 25124.,Unclassified
+BillingSystem,Firewall rule updated to block suspicious traffic from 82.222.248.27.,Security Alert
+NotificationService,Transaction ID TXN65325 processed successfully.,Unclassified
+AuthService,User 17730 failed login attempt from IP 232.10.148.187.,Security Alert
+PaymentGateway,Email notification sent to customer ID 55303.,Unclassified
+InventorySystem,Email notification sent to customer ID 13503.,Unclassified
+PaymentGateway,Firewall rule updated to block suspicious traffic from 34.18.108.136.,Security Alert
+AnalyticsEngine,User 27074 logged in successfully from IP 222.237.67.54.,Security Alert
+SecurityModule,User 76732 failed login attempt from IP 131.79.249.181.,Security Alert
+ModernCRM,User 80201 failed login attempt from IP 95.56.122.235.,Security Alert
